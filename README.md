@@ -6,7 +6,7 @@
 
 ### 文件夹组织机构说明如下：
 
-![alt text](data/assets/diagram.png "Template Class diagram")
+![](data/assets/diagram.png)
 
 
 
@@ -20,7 +20,6 @@ python main.py
 
 如果想查看模型的效果，可以运行下面的代码。
 
-`
     agent = MnistAgent(config)
 
     test_loader = torch.utils.data.DataLoader(
@@ -34,7 +33,7 @@ python main.py
         out = agent.inference(data)
         pre = out.max(1, keepdim=True)
         print(pre[1][0].item(), target.item())
-`
+
 
 
 
