@@ -6,7 +6,7 @@
 
 ### 文件夹组织机构说明如下：
 
-![](data/assets/diagram.png)
+![](https://cdn.jsdelivr.net/gh/whuhit/Pytorch_Template/data/assets/diagram.png)
 
 
 
