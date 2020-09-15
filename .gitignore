@@ -111,3 +111,4 @@ pretrained_weights/*
 
 # Data
 data/*
+!data/assets
