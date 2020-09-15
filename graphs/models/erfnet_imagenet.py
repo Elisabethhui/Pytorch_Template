@@ -12,7 +12,7 @@ Taken from: https://github.com/Eromera/erfnet_pytorch/blob/master/train/erfnet_i
 
 import torch.nn as nn
 
-from graphs.models.custom_layers.erf_blocks import DownsamplerBlock, non_bottleneck_1d
+from graphs.models.layers.erf_blocks import DownsamplerBlock, non_bottleneck_1d
 
 
 class ERFNet(nn.Module):

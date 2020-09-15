@@ -3,6 +3,7 @@
 @author:  sherlock
 @contact: sherlockliao01@gmail.com
 """
+from abc import ABC
 
 import torch.nn as nn
 import math
@@ -12,6 +13,20 @@ from torch.nn import functional as F
 
 def conv3x3(in_planes, out_planes, stride=1):
     return nn.Conv2d(in_planes, out_planes, kernel_size=3, stride=stride, padding=1, bias=False)
+
+
+class BasicConv2d(nn.Module, ABC):
+
+    def __init__(self, in_channels, out_channels, **kwargs):
+        super(BasicConv2d, self).__init__()
+        self.conv = nn.Conv2d(in_channels, out_channels, bias=False, **kwargs)
+        self.bn = nn.BatchNorm2d(out_channels, eps=0.001)
+
+    def forward(self, x):
+        x = self.conv(x)
+        x = self.bn(x)
+        return F.relu6(x, inplace=True)
+
 
 class Conv2dSamePadding(nn.Conv2d):
     """

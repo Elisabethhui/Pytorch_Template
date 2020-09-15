@@ -5,9 +5,9 @@
 @time: 2020/9/10 10:22
 """
 from graphs.backbone.resnet import resnet18_backbone
-from graphs.backbone.FPN import FPN
+from graphs.neck.FPN import FPN
 import torch
-from graphs.models.efficientnet_pytorch import EfficientNet
+from graphs.backbone.efficientnet_pytorch import EfficientNet
 
 
 # net = EfficientNet.from_name("efficientnet-b0")
@@ -32,9 +32,4 @@ from graphs.models.efficientnet_pytorch import EfficientNet
 # for out in outs:
 #     print(out.shape)
 
-import cv2
-
-img = cv2.imread("/Users/yang/Downloads/face.jpeg")
-
-cv2.imshow("", img)
-cv2.waitKey()
+from torchvision.models import mobilenet_v2
