@@ -22,13 +22,13 @@ class MnistDataLoader:
                                    transforms.ToTensor(),
                                    transforms.Normalize((0.1307,), (0.3081,))
                                ])),
-                batch_size=self.config.batch_size, shuffle=True, num_workers=self.config.data_loader_workers, pin_memory=self.config.pin_memory)
+                batch_size=self.config.batch_size, shuffle=True, pin_memory=self.config.pin_memory)
             self.test_loader = torch.utils.data.DataLoader(
                 datasets.MNIST('data', train=False, transform=transforms.Compose([
                     transforms.ToTensor(),
                     transforms.Normalize((0.1307,), (0.3081,))
                 ])),
-                batch_size=self.config.test_batch_size, shuffle=True, num_workers=self.config.data_loader_workers, pin_memory=self.config.pin_memory)
+                batch_size=self.config.test_batch_size, shuffle=True, pin_memory=self.config.pin_memory)
         elif config.data_mode == "imgs":
             raise NotImplementedError("This mode is not implemented YET")
 

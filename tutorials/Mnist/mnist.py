@@ -25,7 +25,7 @@ def main():
     config = process_config(args.config)
 
     agent = MnistAgent(config)
-    agent.run()
+    # agent.run()
 
     if True:
         test_loader = torch.utils.data.DataLoader(
@@ -33,10 +33,10 @@ def main():
                 transforms.ToTensor(),
                 transforms.Normalize((0.1307,), (0.3081,))
             ])),
-            batch_size=1, shuffle=True, num_workers=1)
+            batch_size=1)
 
         for data, target in test_loader:
-            out = agent.inference(data)
+            out = agent.inference(data.cuda())
             pre = out.max(1, keepdim=True)
             print(pre[1][0].item(), target.item())
             # break
