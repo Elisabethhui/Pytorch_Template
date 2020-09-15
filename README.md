@@ -1,6 +1,8 @@
 # PyTorch Template
 
-本项目是深度学习模型pytorch框架的一个通用训练模板，源自 https://github.com/moemen95/Pytorch-Project-Template.在原项目上按照自己的习惯做了一些修改。
+本项目是深度学习模型pytorch框架的一个通用训练模板，源自 https://github.com/moemen95/Pytorch-Project-Template.
+
+在原项目上按照自己的习惯做了一些修改。
 
 ### 文件夹组织机构说明如下：
 
@@ -19,7 +21,6 @@ python main.py
 如果想查看模型的效果，可以运行下面的代码。
 
 `
-
     agent = MnistAgent(config)
 
     test_loader = torch.utils.data.DataLoader(
