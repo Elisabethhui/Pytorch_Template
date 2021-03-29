@@ -1,11 +1,13 @@
-from graphs.backbone.resnet import resnext50_32x4d
+from graphs.backbone.resnet import resnet18
 import torch
 from torchvision.models import densenet
 
 
 if __name__ == '__main__':
-    img = torch.rand(1, 3, 550, 550)
-    net = resnext50_32x4d()
-    outs = net.extract_endpoints(img)
-    for out in outs:
-        print(out.shape)
+    img1 = torch.zeros(1, 3, 550, 550)
+    img2 = torch.ones(1, 3, 550, 550)
+    net = resnet18(num_classes=5)
+    out1 = net(img1)
+    out2 = net(img2)
+    print(out1)
+    print(out2)

@@ -224,9 +224,6 @@ class ResNet(nn.Module):
         c4 = self.layer3(c3)
         c5 = self.layer4(c4)
 
-        if self.backbone:
-            return [c2, c3, c4, c5]
-
         out = self.avgpool(c5)
         out = torch.flatten(out, 1)
         out = self.fc(out)

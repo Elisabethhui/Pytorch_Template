@@ -52,7 +52,7 @@ class Conv2dSamePadding(nn.Conv2d):
 
 if __name__ == '__main__':
     input_ = torch.rand(1, 3, 501, 500)
-    conv2d = Conv2dSamePadding(3, 32, kernel_size=3, stride=1)
+    conv2d = Conv2dSamePadding(3, 32, kernel_size=3, stride=2)
     out = conv2d(input_)
     print(out.shape)
 

@@ -4,7 +4,6 @@
 @file: demo.py
 @time: 2020/9/10 10:22
 """
-from graphs.backbone.resnet import resnet18_backbone
 from graphs.neck.FPN import FPN
 import torch
 from graphs.backbone.efficientnet_pytorch import EfficientNet
